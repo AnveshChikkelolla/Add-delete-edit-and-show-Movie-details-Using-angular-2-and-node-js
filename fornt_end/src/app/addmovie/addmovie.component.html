@@ -1,0 +1,64 @@
+<hr>
+<div class="container">
+  <form #add="ngForm" (ngSubmit)="addstudent(add.value)">
+    <div class="form-group" [ngClass]="{'has-error':(namee.touched ||namee.dirty)&&(!namee.valid)}">
+      <label>Movie Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" #namee="ngModel"
+       placeholder="Enter your name" required/>
+       <span class="help-block" *ngIf="namee.touched && !namee.valid">
+         <span *ngIf="namee.errors.required"> You have not entered the name</span>
+       </span>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error':(ratinge.touched ||ratinge.dirty)&&(!ratinge.valid)}">
+      <label>Rating</label>
+      <input type="number" class="form-control" [(ngModel)]="rating" name="rating" #ratinge="ngModel" 
+      placeholder="Enter your rating" required/>
+      <span class="help-block" *ngIf="ratinge.touched && !ratinge.valid">
+        <span *ngIf="ratinge.errors.required"> You have not entered the rating</span>
+      </span>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error':(releaseDatee.touched ||releaseDatee.dirty)&&(!releaseDatee.valid)}">
+      <label>ReleaseDate</label>
+      <input type="Date" class="form-control" [(ngModel)]="releaseDate" name="releaseDate" #releaseDatee="ngModel" 
+      placeholder="Enter your college" required/>
+      <span class="help-block" *ngIf="releaseDatee.touched && !releaseDatee.valid">
+        <span *ngIf="releaseDatee.errors.required"> You have not entered the releaseDate</span>
+      </span>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error':(languagee.touched ||languagee.dirty)&&(!languagee.valid)}">
+      <label>language</label>
+      <input type="text" class="form-control" [(ngModel)]="language" name="language" #languagee="ngModel" 
+      placeholder=" language" required/>
+      <span class="help-block" *ngIf="languagee.touched && !languagee.valid">
+        <span *ngIf="releaseDatee.errors.required"> You have not entered the Movie language</span>
+      </span>
+    </div>
+<!--    
+     <div class="form-group" [ngClass]="{'has-error':(language.touched ||language.dirty)&&(!language.valid)}">
+      <label>College Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="language" name="language" #language="ngModel" 
+      placeholder="Enter your language" required/>
+      <span class="help-block" *ngIf="language.touched && !language.valid">
+        <span *ngIf="language.errors.required"> You have not entered the language name</span>
+      </span>
+    </div> -->
+    
+    <!-- <div class="form-group" [ngClass]="{'has-error':(rating.touched ||rating.dirty)&&(!rating.valid)}">
+      <label>College Name:</label>
+      <input type="text" class="form-control" [(ngModel)]="rating" name="rating" #collegee="ngModel" 
+      placeholder="Enter your movie rating" required/>
+      <span class="help-block" *ngIf="rating.touched && !rating.valid">
+        <span *ngIf="rating.errors.required"> You have not entered the  movierating</span>
+      </span>
+    </div>
+    -->
+
+
+
+
+    
+    <br>
+    <button class="btn btn-primary" [disabled]="!add.valid">Submit</button>
+    <button class="btn btn-danger" [routerLink]="['/movies']">Cancel</button>
+  </form>
+</div>

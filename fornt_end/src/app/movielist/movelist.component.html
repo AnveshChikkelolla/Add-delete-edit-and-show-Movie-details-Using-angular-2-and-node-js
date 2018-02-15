@@ -1,0 +1,22 @@
+<hr>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th> Movie Name</th>
+      <th>Release Date</th>
+      <th>Rating </th>
+      <th>language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students" [routerLink]="['/movies',student._id]" (click)="selectStudent(student)">
+      <td>{{student.name}}</td>
+      <td>{{student.releaseDate}}</td>
+      <td>{{student.rating}}</td>
+      
+      <td>{{student.language}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-primary" [routerLink]="['/addmovie']">Add Movie</button>

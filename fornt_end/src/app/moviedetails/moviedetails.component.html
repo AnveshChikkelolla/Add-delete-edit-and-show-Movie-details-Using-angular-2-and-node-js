@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:40px"></span>
+  <h2>Movie details</h2>
+  <div class="container well" style="background-color:rgba(111, 245, 238, 0.842)">
+    <h5>
+      <hr>
+      <label>Movie name: </label> {{student?.name}}
+      <br>
+      <label>ReleaseDate: </label> {{student?.releaseDate|uppercase}}
+      <br>
+      <br>
+      <label> Rating</label> {{student?.rating}}
+      <br>
+      <br>
+      <label>Language: </label> {{student?.language|uppercase}}
+      <br>
+ 
+      <hr>
+    </h5>
+  </div>
+  <button class="btn btn-success" [routerLink]="['/movies']">Back to MovieList page</button>
+  <button class="btn btn-danger" (click)="delete(student._id)">Delete Movie</button>
+  <button class="btn btn-danger" [routerLink]="['/movie',student?._id]"> Edit Movie Deteils</button>
+
+</div>
+
+<hr>
